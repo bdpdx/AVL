@@ -125,6 +125,7 @@ template<typename K, typename V> void AVL<K,V>::insert( const K &key, V *value )
 	AVLNode *						left, *node, *right, *x, *y, *z;
 	AVLNode	*						path[ kAVLMaxHeight + 1 ];
 	AVLNode **						root;
+	V *								v;
 	
 	for ( index = 0, root = &_root; ( node = *root ); ++index ) {
 		path[ index ] = node;
@@ -154,41 +155,48 @@ template<typename K, typename V> void AVL<K,V>::insert( const K &key, V *value )
 		--x->_height;
 		--y->_height;
 		
+		k = x->_key;
+		v = x->_value;
+		
 		if ( y == x->_left ) {
 			if ( z == y->_left ) {
-				k = x->_key;                    /*         x                y        */
-				x->_key = y->_key;              /*        / \             /   \      */
+				x->_key = y->_key;              /*         x                y        */
+				x->_value = y->_value;          /*        / \             /   \      */
 				y->_key = k;                    /* 	     y   3           z     x     */
-				x->_left = z;                   /*      / \      =>           / \    */
-				y->_left = y->_right;           /*     z   2                 2   3   */
-				y->_right = x->_right;          /*                                   */
-				x->_right = y;                  /*                                   */
+				y->_value = v;                  /*      / \      =>           / \    */
+				x->_left = z;                   /*     z   2                 2   3   */
+				y->_left = y->_right;
+				y->_right = x->_right;
+				x->_right = y;
 			} else {
-				k = x->_key;                    /*       x                  z        */
-				x->_key = z->_key;              /*      / \               /   \      */
+				x->_key = z->_key;              /*       x                  z        */
+				x->_value = z->_value;          /*      / \               /   \      */
 				z->_key = k;                    /* 	   y   3             y     x     */
-				y->_right = NULL;                /*    / \        =>     /       \    */		// y->_right = z->_left
-//				z->_left = z->_right;           /*   0   z             0         3   */		// z->_left|right are NULL
-				z->_right = x->_right;          /*                                   */
-				x->_right = z;                  /*                                   */
+				z->_value = v;                  /*    / \        =>     /       \    */
+				y->_right = NULL;               /*   0   z             0         3   */	    // y->_right = z->_left
+//				z->_left = z->_right;                                                       // z->_left|right are NULL
+				z->_right = x->_right;
+				x->_right = z;
 			}
 		} else {
 			if ( z == y->_left ) {
-				k = x->_key;                    /*     x                    z        */
-				x->_key = z->_key;              /*    / \                 /   \      */
+				x->_key = z->_key;              /*     x                    z        */
+				x->_value = z->_value;          /*    / \                 /   \      */
 				z->_key = k;                    /* 	 0   y               x     y     */
-				y->_left = NULL;                 /*      / \      =>     /       \    */		// y->_left = z->_right
-//				z->_right = z->_left;           /*     z   3           0         3   */		// z->_left|right are NULL
-				z->_left = x->_left;            /*                                   */
-				x->_left = z;                   /*                                   */
+				z->_value = v;                  /*      / \      =>     /       \    */
+				y->_left = NULL;                /*     z   3           0         3   */     // y->_left = z->_right
+//				z->_right = z->_left;                                                       // z->_left|right are NULL
+				z->_left = x->_left;
+				x->_left = z;
 			} else {
-				k = x->_key;                    /*     x                    y        */
-				x->_key = y->_key;              /*    / \                 /   \      */
+				x->_key = y->_key;              /*     x                    y        */
+				x->_value = y->_value;          /*    / \                 /   \      */
 				y->_key = k;                    /* 	 0   y               x     z     */
-				x->_right = z;                  /*      / \      =>     / \          */
-				y->_right = y->_left;           /*     1   z           0   1         */
-				y->_left = x->_left;            /*                                   */
-				x->_left = y;                   /*                                   */
+				y->_value = v;                  /*      / \      =>     / \          */
+				x->_right = z;                  /*     1   z           0   1         */
+				y->_right = y->_left;
+				y->_left = x->_left;
+				x->_left = y;
 			}
 		}
 		
@@ -206,6 +214,7 @@ template<typename K, typename V> void AVL<K,V>::remove( const K &key ) {
 	AVLNode *						left, *node, *right, *x, *y, *z;
 	AVLNode	*						path[ kAVLMaxHeight + 1 ];
 	AVLNode **						root, **successor;
+	V *								v;
 	
 	for ( index = 0, root = &_root; ( node = *root ); ++index ) {
 		path[ index ] = node;
@@ -294,50 +303,57 @@ found:
 		
 		z = left && ( ! right || left->_height > right->_height ) ? left : right;
 		
+		k = x->_key;
+		v = x->_value;
+		
 		if ( y == x->_left ) {
 			if ( z == y->_left ) {
-				k = x->_key;                    /*         x                y        */
-				x->_key = y->_key;              /*        / \             /   \      */
+				x->_key = y->_key;              /*         x                y        */
+				x->_value = y->_value;          /*        / \             /   \      */
 				y->_key = k;                    /* 	     y   3           z     x     */
-				x->_left = z;                   /*      / \      =>     / \   / \    */
-				y->_left = y->_right;           /*     z   2           0   1 2   3   */
-				y->_right = x->_right;          /*    / \                            */
-				x->_right = y;                  /*   0   1                           */
+				y->_value = v;                  /*      / \      =>     / \   / \    */
+				x->_left = z;                   /*     z   2           0   1 2   3   */
+				y->_left = y->_right;           /*    / \                            */
+				y->_right = x->_right;          /*   0   1                           */
+				x->_right = y;
 				
 				left = z;
 				right = y;
 			} else {
-				k = x->_key;                    /*       x                  z        */
-				x->_key = z->_key;              /*      / \               /   \      */
+				x->_key = z->_key;              /*       x                  z        */
+				x->_value = z->_value;          /*      / \               /   \      */
 				z->_key = k;                    /* 	   y   3             y     x     */
-				y->_right = z->_left;           /*    / \        =>     / \   / \    */
-				z->_left = z->_right;           /*   0   z             0   1 2   3   */
-				z->_right = x->_right;          /*      / \                          */
-				x->_right = z;                  /*     1   2                         */
+				z->_value = v;                  /*    / \        =>     / \   / \    */
+				y->_right = z->_left;           /*   0   z             0   1 2   3   */
+				z->_left = z->_right;           /*      / \                          */
+				z->_right = x->_right;          /*     1   2                         */
+				x->_right = z;
 				
 				left = y;
 				right = z;
 			}
 		} else {
 			if ( z == y->_left ) {
-				k = x->_key;                    /*     x                    z        */
-				x->_key = z->_key;              /*    / \                 /   \      */
+				x->_key = z->_key;              /*     x                    z        */
+				x->_value = z->_value;          /*    / \                 /   \      */
 				z->_key = k;                    /* 	 0   y               x     y     */
-				y->_left = z->_right;           /*      / \      =>     / \   / \    */
-				z->_right = z->_left;           /*     z   3           0   1 2   3   */
-				z->_left = x->_left;            /*    / \                            */
-				x->_left = z;                   /*   1   2                           */
+				z->_value = v;                  /*      / \      =>     / \   / \    */
+				y->_left = z->_right;           /*     z   3           0   1 2   3   */
+				z->_right = z->_left;           /*    / \                            */
+				z->_left = x->_left;            /*   1   2                           */
+				x->_left = z;
 				
 				left = z;
 				right = y;
 			} else {
-				k = x->_key;                    /*     x                    y        */
-				x->_key = y->_key;              /*    / \                 /   \      */
+				x->_key = y->_key;              /*     x                    y        */
+				x->_value = y->_value;          /*    / \                 /   \      */
 				y->_key = k;                    /* 	 0   y               x     z     */
-				x->_right = z;                  /*      / \      =>     / \   / \    */
-				y->_right = y->_left;           /*     1   z           0   1 2   3   */
-				y->_left = x->_left;            /*        / \                        */
-				x->_left = y;                   /*       2   3                       */
+				y->_value = v;                  /*      / \      =>     / \   / \    */
+				x->_right = z;                  /*     1   z           0   1 2   3   */
+				y->_right = y->_left;           /*        / \                        */
+				y->_left = x->_left;            /*       2   3                       */
+				x->_left = y;
 				
 				left = y;
 				right = z;
