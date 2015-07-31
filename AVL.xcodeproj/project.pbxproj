@@ -7,8 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D34515DC1907B604007C7F6E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34515DB1907B604007C7F6E /* main.cpp */; };
+		D31D2C651B6B09CA0041359C /* AVLFramework OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = D31D2C641B6B09CA0041359C /* AVLFramework OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D31D2C6C1B6B09CA0041359C /* AVLFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31D2C621B6B09CA0041359C /* AVLFramework.framework */; };
+		D31D2C711B6B09CA0041359C /* AVLFramework_OSXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31D2C701B6B09CA0041359C /* AVLFramework_OSXTests.swift */; };
+		D31D2C7D1B6B0B0D0041359C /* AVL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31D2C7C1B6B0B0D0041359C /* AVL.swift */; };
+		D34515DC1907B604007C7F6E /* AVLTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D34515DB1907B604007C7F6E /* AVLTest.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D31D2C6D1B6B09CA0041359C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D34515D01907B604007C7F6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D31D2C611B6B09CA0041359C;
+			remoteInfo = "AVLFramework OSX";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D34515D61907B604007C7F6E /* CopyFiles */ = {
@@ -23,14 +37,36 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D31D2C621B6B09CA0041359C /* AVLFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AVLFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31D2C641B6B09CA0041359C /* AVLFramework OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVLFramework OSX.h"; sourceTree = "<group>"; };
+		D31D2C661B6B09CA0041359C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D31D2C6B1B6B09CA0041359C /* AVLFramework OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AVLFramework OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31D2C701B6B09CA0041359C /* AVLFramework_OSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVLFramework_OSXTests.swift; sourceTree = "<group>"; };
+		D31D2C721B6B09CA0041359C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D31D2C7C1B6B0B0D0041359C /* AVL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVL.swift; sourceTree = "<group>"; };
 		D34515D81907B604007C7F6E /* AVL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AVL; sourceTree = BUILT_PRODUCTS_DIR; };
-		D34515DB1907B604007C7F6E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D34515DB1907B604007C7F6E /* AVLTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AVLTest.cpp; sourceTree = "<group>"; };
 		D39C248C1908436100160B87 /* AVL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVL.h; sourceTree = "<group>"; };
 		D39C248D1908478A00160B87 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D39C248E1908478A00160B87 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D31D2C5E1B6B09CA0041359C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D31D2C681B6B09CA0041359C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31D2C6C1B6B09CA0041359C /* AVLFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D34515D51907B604007C7F6E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,12 +77,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D31D2C631B6B09CA0041359C /* AVLFramework OSX */ = {
+			isa = PBXGroup;
+			children = (
+				D31D2C641B6B09CA0041359C /* AVLFramework OSX.h */,
+				D31D2C661B6B09CA0041359C /* Info.plist */,
+			);
+			path = "AVLFramework OSX";
+			sourceTree = "<group>";
+		};
+		D31D2C6F1B6B09CA0041359C /* AVLFramework OSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				D31D2C701B6B09CA0041359C /* AVLFramework_OSXTests.swift */,
+				D31D2C721B6B09CA0041359C /* Info.plist */,
+			);
+			path = "AVLFramework OSXTests";
+			sourceTree = "<group>";
+		};
+		D31D2C791B6B09E50041359C /* C++ */ = {
+			isa = PBXGroup;
+			children = (
+				D39C248C1908436100160B87 /* AVL.h */,
+				D34515DB1907B604007C7F6E /* AVLTest.cpp */,
+			);
+			name = "C++";
+			sourceTree = "<group>";
+		};
+		D31D2C7A1B6B0A3E0041359C /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				D31D2C7C1B6B0B0D0041359C /* AVL.swift */,
+			);
+			name = Swift;
+			sourceTree = "<group>";
+		};
 		D34515CF1907B604007C7F6E = {
 			isa = PBXGroup;
 			children = (
 				D39C248D1908478A00160B87 /* LICENSE */,
 				D39C248E1908478A00160B87 /* README.md */,
 				D34515DA1907B604007C7F6E /* AVL */,
+				D31D2C631B6B09CA0041359C /* AVLFramework OSX */,
+				D31D2C6F1B6B09CA0041359C /* AVLFramework OSXTests */,
 				D34515D91907B604007C7F6E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				D34515D81907B604007C7F6E /* AVL */,
+				D31D2C621B6B09CA0041359C /* AVLFramework.framework */,
+				D31D2C6B1B6B09CA0041359C /* AVLFramework OSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,15 +137,62 @@
 		D34515DA1907B604007C7F6E /* AVL */ = {
 			isa = PBXGroup;
 			children = (
-				D34515DB1907B604007C7F6E /* main.cpp */,
-				D39C248C1908436100160B87 /* AVL.h */,
+				D31D2C791B6B09E50041359C /* C++ */,
+				D31D2C7A1B6B0A3E0041359C /* Swift */,
 			);
 			path = AVL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		D31D2C5F1B6B09CA0041359C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31D2C651B6B09CA0041359C /* AVLFramework OSX.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		D31D2C611B6B09CA0041359C /* AVLFramework OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D31D2C731B6B09CA0041359C /* Build configuration list for PBXNativeTarget "AVLFramework OSX" */;
+			buildPhases = (
+				D31D2C5D1B6B09CA0041359C /* Sources */,
+				D31D2C5E1B6B09CA0041359C /* Frameworks */,
+				D31D2C5F1B6B09CA0041359C /* Headers */,
+				D31D2C601B6B09CA0041359C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AVLFramework OSX";
+			productName = "AVLFramework OSX";
+			productReference = D31D2C621B6B09CA0041359C /* AVLFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D31D2C6A1B6B09CA0041359C /* AVLFramework OSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D31D2C761B6B09CA0041359C /* Build configuration list for PBXNativeTarget "AVLFramework OSXTests" */;
+			buildPhases = (
+				D31D2C671B6B09CA0041359C /* Sources */,
+				D31D2C681B6B09CA0041359C /* Frameworks */,
+				D31D2C691B6B09CA0041359C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D31D2C6E1B6B09CA0041359C /* PBXTargetDependency */,
+			);
+			name = "AVLFramework OSXTests";
+			productName = "AVLFramework OSXTests";
+			productReference = D31D2C6B1B6B09CA0041359C /* AVLFramework OSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D34515D71907B604007C7F6E /* AVL */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D34515E11907B604007C7F6E /* Build configuration list for PBXNativeTarget "AVL" */;
@@ -94,8 +216,17 @@
 		D34515D01907B604007C7F6E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Balance Software";
+				TargetAttributes = {
+					D31D2C611B6B09CA0041359C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					D31D2C6A1B6B09CA0041359C = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
 			};
 			buildConfigurationList = D34515D31907B604007C7F6E /* Build configuration list for PBXProject "AVL" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -110,22 +241,252 @@
 			projectRoot = "";
 			targets = (
 				D34515D71907B604007C7F6E /* AVL */,
+				D31D2C611B6B09CA0041359C /* AVLFramework OSX */,
+				D31D2C6A1B6B09CA0041359C /* AVLFramework OSXTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		D31D2C601B6B09CA0041359C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D31D2C691B6B09CA0041359C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		D31D2C5D1B6B09CA0041359C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31D2C7D1B6B0B0D0041359C /* AVL.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D31D2C671B6B09CA0041359C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31D2C711B6B09CA0041359C /* AVLFramework_OSXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D34515D41907B604007C7F6E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D34515DC1907B604007C7F6E /* main.cpp in Sources */,
+				D34515DC1907B604007C7F6E /* AVLTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D31D2C6E1B6B09CA0041359C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D31D2C611B6B09CA0041359C /* AVLFramework OSX */;
+			targetProxy = D31D2C6D1B6B09CA0041359C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D31D2C741B6B09CA0041359C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "AVLFramework OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.balancesoftware.AVLFramework;
+				PRODUCT_NAME = AVLFramework;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D31D2C751B6B09CA0041359C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "AVLFramework OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.balancesoftware.AVLFramework;
+				PRODUCT_NAME = AVLFramework;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D31D2C771B6B09CA0041359C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "AVLFramework OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.balancesoftware.AVLFramework-OSXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D31D2C781B6B09CA0041359C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "AVLFramework OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.balancesoftware.AVLFramework-OSXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D31D2C7E1B6B14AB0041359C /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"TEST=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DDEBUG -DTEST";
+				SDKROOT = macosx;
+			};
+			name = Test;
+		};
+		D31D2C7F1B6B14AB0041359C /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Test;
+		};
+		D31D2C801B6B14AB0041359C /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "AVLFramework OSX/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.balancesoftware.AVLFramework;
+				PRODUCT_NAME = AVLFramework;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		D31D2C811B6B14AB0041359C /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "AVLFramework OSXTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.balancesoftware.AVLFramework-OSXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Test;
+		};
 		D34515DF1907B604007C7F6E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -161,6 +522,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DDEBUG";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -193,6 +555,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_SWIFT_FLAGS = "-DRELEASE";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -214,10 +577,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D31D2C731B6B09CA0041359C /* Build configuration list for PBXNativeTarget "AVLFramework OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31D2C741B6B09CA0041359C /* Debug */,
+				D31D2C801B6B14AB0041359C /* Test */,
+				D31D2C751B6B09CA0041359C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D31D2C761B6B09CA0041359C /* Build configuration list for PBXNativeTarget "AVLFramework OSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31D2C771B6B09CA0041359C /* Debug */,
+				D31D2C811B6B14AB0041359C /* Test */,
+				D31D2C781B6B09CA0041359C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D34515D31907B604007C7F6E /* Build configuration list for PBXProject "AVL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D34515DF1907B604007C7F6E /* Debug */,
+				D31D2C7E1B6B14AB0041359C /* Test */,
 				D34515E01907B604007C7F6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -227,6 +609,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D34515E21907B604007C7F6E /* Debug */,
+				D31D2C7F1B6B14AB0041359C /* Test */,
 				D34515E31907B604007C7F6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

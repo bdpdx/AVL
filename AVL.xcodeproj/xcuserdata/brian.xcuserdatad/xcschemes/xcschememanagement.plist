@@ -9,9 +9,34 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AVLFramework OSX.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>D31D2C451B6B09140041359C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D31D2C4E1B6B09140041359C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D31D2C611B6B09CA0041359C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D31D2C6A1B6B09CA0041359C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D34515D71907B604007C7F6E</key>
 		<dict>
 			<key>primary</key>
