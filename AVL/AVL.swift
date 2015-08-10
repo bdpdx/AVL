@@ -16,6 +16,7 @@ import Foundation
 public enum AVLTraverseMethod {
 	case BreadthFirst
 	case Infix
+	case InfixReverse
 	case Postfix
 	case Prefix
 }
@@ -493,6 +494,16 @@ public class AVL<K: Comparable, V> {
 #endif
 			}
 			if !stop { stop = traverse(root.right, method: method, callback: callback) }
+		case .InfixReverse:
+			stop = traverse(root.right, method: method, callback: callback)
+			if !stop {
+#if TEST
+				stop = callback(key: root.key, value: root.value, height: root.height)
+#else
+				stop = callback(key: root.key, value: root.value)
+#endif
+			}
+			if !stop { stop = traverse(root.left, method: method, callback: callback) }
 		case .Postfix:
 			stop = traverse(root.left, method: method, callback: callback)
 			if !stop { stop = traverse(root.right, method: method, callback: callback) }
