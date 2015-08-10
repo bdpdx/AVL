@@ -1,7 +1,7 @@
 AVL
 ===
 
-C++ template implementation of AVL tree with no recursion in either insert or delete.
+AVL tree with no recursion in insert or remove.  Implemented in Swift 2.0 and as a C++ template.
 
 The included project is an Xcode project but there's no requirement that this run on a Mac.  Xcode is just convenient for me.
 
