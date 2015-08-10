@@ -1,6 +1,6 @@
 //
 //  AVL.swift
-//  Coinbase
+//  AVL
 //
 //  Created by Brian Doyle on 7/29/15.
 //  Copyright © 2015 Balance Software. All rights reserved.
