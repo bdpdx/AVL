@@ -56,17 +56,36 @@ extension Comparable {
 public class AVL<K: Comparable, V> {
 	typealias Node = AVLNode<K, V>
 
-	public var capacity = 16		// capacity allows faster insertion for the first 2^capacity elements
+	public var capacity: Int		// capacity allows faster insertion for the first 2^capacity elements
 	var root = Node()
 
 	private var elements = 0
 	
 	// MARK: - Public methods -
 	
+	public init(capacity: Int = 16) {
+		self.capacity = capacity
+	}
+	
+	public func clear() {
+		elements = 0
+
+		root.key = nil
+		root.value = nil
+		root.left = nil
+		root.right = nil
+	}
+
 	public var count: Int { return elements }
 	
 	public func find(key: K, inout value:V?) -> Bool {
-		for var root: Node! = self.root; root != nil; {
+		guard elements > 0 else {
+			return false
+		}
+	
+		var root: Node! = self.root
+	
+		while root != nil {
 			let c = key.compare(root.key)
 			
 			if c < 0 {
@@ -92,19 +111,19 @@ public class AVL<K: Comparable, V> {
 	}
 
 	public func insert(key: K, value: V? = nil) {
-		var root = self.root
-		
-		guard root.key != nil else {
-			root.key = key
-			root.value = value
+		guard elements > 0 else {
 			++elements
+
+			self.root.key = key
+			self.root.value = value
 
 			return
 		}
-		
+
 		var c: Int
 		let node = Node(key: key, value: value)
 		var path = [Node]()
+		var root = self.root
 		
 		path.reserveCapacity(capacity)
 		
@@ -216,15 +235,14 @@ public class AVL<K: Comparable, V> {
 	}
 
 	public func remove(key: K) -> V? {
-		var root: Node! = self.root
-
-		guard root.key != nil else {
+		guard elements > 0 else {
 			return nil
 		}
 
 		var found = false
 		var parent: (node: Node!, childIsLeft: Bool)!
 		var path = [Node]()
+		var root: Node! = self.root
 		var value: V?
 
 		path.reserveCapacity(capacity)
@@ -423,13 +441,6 @@ public class AVL<K: Comparable, V> {
 		return value
 	}
 
-	public func reset() {
-		root.key = nil
-		root.value = nil
-		root.left = nil
-		root.right = nil
-	}
-
 	// return true to from AVLTraverseCallback to abort traversal
 #if TEST
 	typealias AVLTraverseCallback = (key:K, value:V?, height: Int) -> Bool
@@ -437,9 +448,9 @@ public class AVL<K: Comparable, V> {
 	typealias AVLTraverseCallback = (key:K, value:V?) -> Bool
 #endif
 
-	// will default argument work with trailing closure?
-	public func traverse(method: AVLTraverseMethod = .Infix, callback: AVLTraverseCallback) {
-		traverse(root, method: method, callback: callback)
+	// if traverse() returns false each node was visited, otherwise the traversal was aborted
+	public func traverse(method: AVLTraverseMethod = .Infix, callback: AVLTraverseCallback) -> Bool {
+		return traverse(root, method: method, callback: callback)
 	}
 
 	func traverse(var root: Node!, method: AVLTraverseMethod, callback: AVLTraverseCallback) -> Bool {
