@@ -15,7 +15,7 @@ using namespace std;
 
 #import "AVL.h"
 
-bool								gError;
+bool	    						gError;
 
 long compareChars( const char &lhs, const char &rhs ) {
 	return lhs < rhs ? -1 : lhs > rhs ? 1 : 0;
